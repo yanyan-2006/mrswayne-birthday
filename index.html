@@ -1,290 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday, Mrs. Wayne ♡</title>
+<title>Happy Birthday, Mrs. Wayne ♡</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #fff7f8, #ffe9ed);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Georgia, serif;
-      color: #5c343c;
-      text-align: center;
-      overflow: hidden;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .container {
-      width: 100%;
-      max-width: 500px;
-      padding: 30px 20px;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 35%, #fffefe 0%, #fff4f5 45%, #f9e4e8 100%);
+  color: #613d43;
+  font-family: Georgia, "Times New Roman", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    .motto {
-      font-size: 15px;
-      letter-spacing: 5px;
-      margin-bottom: 12px;
-      color: #9b626d;
-    }
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 20px;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 34px;
-      margin: 0 0 8px;
-      font-weight: normal;
-    }
+/* TEXT */
 
-    .wish-text {
-      font-size: 15px;
-      font-style: italic;
-      margin-bottom: 45px;
-      color: #8b5963;
-    }
+.motto {
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: #a56d76;
+  margin-bottom: 14px;
+}
 
-    /* CAKE */
+h1 {
+  margin: 0;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: normal;
+  color: #633b43;
+}
 
-    .cake-area {
-      position: relative;
-      width: 280px;
-      height: 230px;
-      margin: 0 auto;
-    }
+.subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  font-style: italic;
+  color: #9a6870;
+}
 
-    .cake {
-      position: absolute;
-      bottom: 20px;
-      left: 25px;
-      width: 230px;
-      height: 105px;
-      background: #f5c7c9;
-      border-radius: 12px 12px 18px 18px;
-      box-shadow: 0 8px 0 #e7a8ad;
-    }
+/* CAKE AREA */
 
-    /* frosting */
+.cake-area {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  margin: 45px auto 0;
+}
 
-    .frosting {
-      position: absolute;
-      top: -15px;
-      left: -5px;
-      width: 240px;
-      height: 45px;
-      background: #fffafa;
-      border-radius: 50%;
-      box-shadow: 0 5px 0 #f3e5e7;
-    }
+/* PLATE */
 
-    .cream-drop {
-      position: absolute;
-      width: 22px;
-      height: 28px;
-      background: #fffafa;
-      border-radius: 0 0 15px 15px;
-      top: 18px;
-    }
+.plate {
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+  width: 300px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 8px 15px rgba(110, 55, 65, 0.12),
+    inset 0 -4px 8px rgba(210, 170, 175, 0.3);
+}
 
-    .drop1 { left: 35px; }
-    .drop2 { left: 105px; }
-    .drop3 { left: 175px; }
+/* CAKE BODY */
 
-    /* strawberries */
+.cake {
+  position: absolute;
+  bottom: 43px;
+  left: 38px;
+  width: 255px;
+  height: 135px;
+  border-radius: 12px 12px 24px 24px;
 
-    .strawberry {
-      position: absolute;
-      width: 22px;
-      height: 26px;
-      background: #e95d68;
-      border-radius: 50% 50% 55% 55%;
-      z-index: 3;
-    }
+  background:
+    linear-gradient(
+      to bottom,
+      #f3c8c3 0%,
+      #efbbb7 48%,
+      #e8aaa9 49%,
+      #e5a4a5 100%
+    );
 
-    .strawberry::before {
-      content: "✦";
-      position: absolute;
-      color: #4f8b55;
-      font-size: 15px;
-      top: -12px;
-      left: 3px;
-    }
+  box-shadow:
+    0 8px 0 #d99396,
+    0 15px 18px rgba(100, 45, 55, 0.15);
+}
 
-    .berry1 {
-      top: -20px;
-      left: 45px;
-      transform: rotate(-12deg);
-    }
+/* CAKE SIDE DETAILS */
 
-    .berry2 {
-      top: -25px;
-      left: 105px;
-      transform: rotate(8deg);
-    }
+.cake::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 42px;
+  width: 100%;
+  height: 3px;
+  background: rgba(180, 105, 110, 0.18);
+}
 
-    .berry3 {
-      top: -18px;
-      right: 35px;
-      transform: rotate(-8deg);
-    }
+.cake::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 17px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(160, 82, 90, 0.12);
+}
 
-    /* candle */
+/* CAKE CREAM LAYER */
 
-    .candle {
-      position: absolute;
-      z-index: 5;
-      left: 134px;
-      top: -72px;
-      width: 14px;
-      height: 65px;
-      background: repeating-linear-gradient(
-        -45deg,
-        #f3a6b2,
-        #f3a6b2 7px,
-        #fff 7px,
-        #fff 14px
-      );
-      border-radius: 4px;
-      cursor: pointer;
-    }
+.cream-layer {
+  position: absolute;
+  left: 5px;
+  top: 33px;
+  width: 245px;
+  height: 27px;
+  background: #fffafa;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(130, 75, 80, 0.12);
+}
 
-    .flame {
-      position: absolute;
-      width: 18px;
-      height: 27px;
-      background: #ffb347;
-      border-radius: 50% 50% 50% 50%;
-      top: -28px;
-      left: -2px;
-      transform: rotate(45deg);
-      box-shadow: 0 0 18px #ffcf70;
-      transition: 0.3s;
-    }
+/* TOP FROSTING */
 
-    .flame::after {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 12px;
-      background: #fff4c2;
-      border-radius: 50%;
-      left: 5px;
-      top: 7px;
-    }
+.frosting {
+  position: absolute;
+  left: -5px;
+  top: -25px;
+  width: 265px;
+  height: 65px;
+  background: #fffdfd;
+  border-radius: 50%;
+  box-shadow:
+    0 5px 8px rgba(140, 85, 90, 0.13),
+    inset 0 -5px 5px rgba(235, 220, 222, 0.5);
+}
 
-    .flame.off {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.2) rotate(45deg);
-      pointer-events: none;
-    }
+/* CREAM DRIPS */
 
-    .smoke {
-      position: absolute;
-      top: -35px;
-      left: 2px;
-      font-size: 25px;
-      opacity: 0;
-      transition: 0.5s;
-    }
+.drip {
+  position: absolute;
+  top: 25px;
+  width: 28px;
+  height: 35px;
+  background: #fffdfd;
+  border-radius: 0 0 18px 18px;
+}
 
-    .smoke.show {
-      opacity: 0.35;
-      transform: translateY(-20px);
-    }
+.drip1 { left: 32px; }
+.drip2 { left: 91px; height: 45px; }
+.drip3 { left: 154px; height: 31px; }
+.drip4 { left: 207px; height: 41px; }
 
-    .message {
-      margin-top: 15px;
-      font-size: 15px;
-      opacity: 0;
-      transition: 0.7s;
-    }
+/* CAKE TOP SHADOW */
 
-    .message.show {
-      opacity: 1;
-    }
+.top-shadow {
+  position: absolute;
+  left: 30px;
+  top: -5px;
+  width: 195px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(220, 180, 183, 0.22);
+}
 
-    .heart {
-      margin-top: 12px;
-      font-size: 20px;
-    }
-  </style>
+/* STRAWBERRIES */
+
+.strawberry {
+  position: absolute;
+  z-index: 5;
+  width: 29px;
+  height: 37px;
+
+  background:
+    radial-gradient(circle at 35% 28%, #ff9a9e 0 5%, transparent 6%),
+    radial-gradient(circle at 68% 42%, #ff9a9e 0 4%, transparent 5%),
+    linear-gradient(145deg, #ed5a63, #c93243);
+
+  border-radius: 55% 55% 48% 48%;
+  transform: rotate(0deg);
+  box-shadow: 0 3px 4px rgba(130, 40, 50, 0.2);
+}
+
+/* STRAWBERRY SEEDS */
+
+.strawberry::after {
+  content: "·  ·  ·";
+  position: absolute;
+  left: 3px;
+  top: 11px;
+  width: 25px;
+  color: #ffd7a8;
+  font-size: 12px;
+  line-height: 10px;
+  letter-spacing: 2px;
+  transform: rotate(-8deg);
+}
+
+/* LEAVES */
+
+.strawberry::before {
+  content: "✦";
+  position: absolute;
+  top: -16px;
+  left: 7px;
+  color: #65925e;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.berry1 {
+  left: 45px;
+  top: -25px;
+  transform: rotate(-15deg);
+}
+
+.berry2 {
+  left: 112px;
+  top: -30px;
+  transform: rotate(5deg);
+}
+
+.berry3 {
+  right: 47px;
+  top: -24px;
+  transform: rotate(14deg);
+}
+
+.berry4 {
+  left: 82px;
+  top: 12px;
+  width: 22px;
+  height: 29px;
+  transform: rotate(18deg);
+}
+
+.berry5 {
+  right: 82px;
+  top: 10px;
+  width: 23px;
+  height: 30px;
+  transform: rotate(-18deg);
+}
+
+/* LITTLE CREAM DOTS */
+
+.cream-dot {
+  position: absolute;
+  z-index: 6;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 3px rgba(120, 70, 75, 0.12);
+}
+
+.dot1 { left: 67px; top: 7px; }
+.dot2 { left: 136px; top: 4px; }
+.dot3 { right: 68px; top: 8px; }
+
+/* CANDLE */
+
+.candle {
+  position: absolute;
+  z-index: 20;
+
+  left: 154px;
+  top: -85px;
+
+  width: 18px;
+  height: 72px;
+
+  border-radius: 5px;
+
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      #ef9da9 0px,
+      #ef9da9 7px,
+      #fff 7px,
+      #fff 14px
+    );
+
+  box-shadow:
+    inset 2px 0 3px rgba(255,255,255,0.7),
+    2px 4px 6px rgba(100, 50, 60, 0.15);
+
+  cursor: pointer;
+}
+
+/* WICK */
+
+.wick {
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  width: 3px;
+  height: 9px;
+  background: #493537;
+  border-radius: 3px;
+}
+
+/* FLAME */
+
+.flame {
+  position: absolute;
+  left: -5px;
+  top: -34px;
+
+  width: 28px;
+  height: 36px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 65%,
+      #fff5c4 0 22%,
+      #ffc44d 23% 58%,
+      #f28b35 59% 100%
+    );
+
+  border-radius: 55% 45% 55% 45%;
+  transform: rotate(45deg);
+
+  box-shadow:
+    0 0 12px #ffc766,
+    0 0 25px rgba(255, 184, 70, 0.6);
+
+  transition: all 0.35s ease;
+}
+
+.flame.off {
+  opacity: 0;
+  transform:
+    translateY(-15px)
+    scale(0.15)
+    rotate(45deg);
+}
+
+/* SMOKE */
+
+.smoke {
+  position: absolute;
+  top: -45px;
+  left: 2px;
+  font-size: 26px;
+  color: #9c9697;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: 0.8s ease;
+}
+
+.smoke.show {
+  opacity: 0.35;
+  transform: translateY(-18px);
+}
+
+/* MESSAGE */
+
+.instruction {
+  margin-top: -5px;
+  font-size: 14px;
+  color: #a16b73;
+  letter-spacing: 0.4px;
+}
+
+.message {
+  margin: 22px auto 0;
+  max-width: 430px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #80545c;
+
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 0.8s ease;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heart {
+  margin-top: 14px;
+  color: #c77b85;
+  font-size: 20px;
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="motto">
-      LIVE • LOVE • LAUGH
-    </div>
+  <div class="motto">
+    LIVE • LOVE • LAUGH
+  </div>
 
-    <h1>Happy Birthday, Mrs. Wayne ♡</h1>
+  <h1>
+    Happy Birthday, Mrs. Wayne ♡
+  </h1>
 
-    <div class="wish-text">
-      Make a wish and click the flame.
-    </div>
+  <div class="subtitle">
+    A little cake for a beautiful day.
+  </div>
 
-    <div class="cake-area">
 
-      <div class="candle" onclick="blowCandle()">
+  <div class="cake-area">
 
-        <div class="flame" id="flame"></div>
+    <!-- CANDLE -->
+    <div class="candle" onclick="blowCandle()">
 
-        <div class="smoke" id="smoke">
-          〰
-        </div>
+      <div class="wick"></div>
 
-      </div>
+      <div class="flame" id="flame"></div>
 
-      <div class="cake">
-
-        <div class="frosting">
-          <div class="cream-drop drop1"></div>
-          <div class="cream-drop drop2"></div>
-          <div class="cream-drop drop3"></div>
-        </div>
-
-        <div class="strawberry berry1"></div>
-        <div class="strawberry berry2"></div>
-        <div class="strawberry berry3"></div>
-
+      <div class="smoke" id="smoke">
+        〰
       </div>
 
     </div>
 
-    <div class="message" id="message">
-      May your days be filled with love, laughter,
-      beautiful moments, and little reasons to smile. ♡
-    </div>
 
-    <div class="heart">
-      ♡
+    <!-- CAKE -->
+
+    <div class="plate"></div>
+
+    <div class="cake">
+
+      <div class="top-shadow"></div>
+
+      <div class="frosting">
+
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+        <div class="drip drip4"></div>
+
+        <div class="cream-dot dot1"></div>
+        <div class="cream-dot dot2"></div>
+        <div class="cream-dot dot3"></div>
+
+      </div>
+
+
+      <div class="cream-layer"></div>
+
+
+      <!-- STRAWBERRIES -->
+
+      <div class="strawberry berry1"></div>
+      <div class="strawberry berry2"></div>
+      <div class="strawberry berry3"></div>
+      <div class="strawberry berry4"></div>
+      <div class="strawberry berry5"></div>
+
     </div>
 
   </div>
 
 
-  <script>
+  <div class="instruction">
+    Make a wish and click the flame ♡
+  </div>
 
-    function blowCandle() {
 
-      const flame = document.getElementById("flame");
-      const smoke = document.getElementById("smoke");
-      const message = document.getElementById("message");
+  <div class="message" id="message">
+    May your life be filled with love, laughter,
+    beautiful moments, and little reasons to smile.
+  </div>
 
-      flame.classList.add("off");
-      smoke.classList.add("show");
-      message.classList.add("show");
 
-    }
+  <div class="heart">
+    ♡
+  </div>
 
-  </script>
+</div>
+
+
+<script>
+
+function blowCandle() {
+
+  const flame = document.getElementById("flame");
+  const smoke = document.getElementById("smoke");
+  const message = document.getElementById("message");
+
+  flame.classList.add("off");
+  smoke.classList.add("show");
+  message.classList.add("show");
+
+}
+
+</script>
 
 </body>
 </html>
