@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday, Mrs. Wayne ♡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff7f8, #ffe9ed);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      color: #5c343c;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 30px 20px;
+    }
+
+    .motto {
+      font-size: 15px;
+      letter-spacing: 5px;
+      margin-bottom: 12px;
+      color: #9b626d;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin: 0 0 8px;
+      font-weight: normal;
+    }
+
+    .wish-text {
+      font-size: 15px;
+      font-style: italic;
+      margin-bottom: 45px;
+      color: #8b5963;
+    }
+
+    /* CAKE */
+
+    .cake-area {
+      position: relative;
+      width: 280px;
+      height: 230px;
+      margin: 0 auto;
+    }
+
+    .cake {
+      position: absolute;
+      bottom: 20px;
+      left: 25px;
+      width: 230px;
+      height: 105px;
+      background: #f5c7c9;
+      border-radius: 12px 12px 18px 18px;
+      box-shadow: 0 8px 0 #e7a8ad;
+    }
+
+    /* frosting */
+
+    .frosting {
+      position: absolute;
+      top: -15px;
+      left: -5px;
+      width: 240px;
+      height: 45px;
+      background: #fffafa;
+      border-radius: 50%;
+      box-shadow: 0 5px 0 #f3e5e7;
+    }
+
+    .cream-drop {
+      position: absolute;
+      width: 22px;
+      height: 28px;
+      background: #fffafa;
+      border-radius: 0 0 15px 15px;
+      top: 18px;
+    }
+
+    .drop1 { left: 35px; }
+    .drop2 { left: 105px; }
+    .drop3 { left: 175px; }
+
+    /* strawberries */
+
+    .strawberry {
+      position: absolute;
+      width: 22px;
+      height: 26px;
+      background: #e95d68;
+      border-radius: 50% 50% 55% 55%;
+      z-index: 3;
+    }
+
+    .strawberry::before {
+      content: "✦";
+      position: absolute;
+      color: #4f8b55;
+      font-size: 15px;
+      top: -12px;
+      left: 3px;
+    }
+
+    .berry1 {
+      top: -20px;
+      left: 45px;
+      transform: rotate(-12deg);
+    }
+
+    .berry2 {
+      top: -25px;
+      left: 105px;
+      transform: rotate(8deg);
+    }
+
+    .berry3 {
+      top: -18px;
+      right: 35px;
+      transform: rotate(-8deg);
+    }
+
+    /* candle */
+
+    .candle {
+      position: absolute;
+      z-index: 5;
+      left: 134px;
+      top: -72px;
+      width: 14px;
+      height: 65px;
+      background: repeating-linear-gradient(
+        -45deg,
+        #f3a6b2,
+        #f3a6b2 7px,
+        #fff 7px,
+        #fff 14px
+      );
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .flame {
+      position: absolute;
+      width: 18px;
+      height: 27px;
+      background: #ffb347;
+      border-radius: 50% 50% 50% 50%;
+      top: -28px;
+      left: -2px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 18px #ffcf70;
+      transition: 0.3s;
+    }
+
+    .flame::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 12px;
+      background: #fff4c2;
+      border-radius: 50%;
+      left: 5px;
+      top: 7px;
+    }
+
+    .flame.off {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.2) rotate(45deg);
+      pointer-events: none;
+    }
+
+    .smoke {
+      position: absolute;
+      top: -35px;
+      left: 2px;
+      font-size: 25px;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .smoke.show {
+      opacity: 0.35;
+      transform: translateY(-20px);
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 15px;
+      opacity: 0;
+      transition: 0.7s;
+    }
+
+    .message.show {
+      opacity: 1;
+    }
+
+    .heart {
+      margin-top: 12px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="motto">
+      LIVE • LOVE • LAUGH
+    </div>
+
+    <h1>Happy Birthday, Mrs. Wayne ♡</h1>
+
+    <div class="wish-text">
+      Make a wish and click the flame.
+    </div>
+
+    <div class="cake-area">
+
+      <div class="candle" onclick="blowCandle()">
+
+        <div class="flame" id="flame"></div>
+
+        <div class="smoke" id="smoke">
+          〰
+        </div>
+
+      </div>
+
+      <div class="cake">
+
+        <div class="frosting">
+          <div class="cream-drop drop1"></div>
+          <div class="cream-drop drop2"></div>
+          <div class="cream-drop drop3"></div>
+        </div>
+
+        <div class="strawberry berry1"></div>
+        <div class="strawberry berry2"></div>
+        <div class="strawberry berry3"></div>
+
+      </div>
+
+    </div>
+
+    <div class="message" id="message">
+      May your days be filled with love, laughter,
+      beautiful moments, and little reasons to smile. ♡
+    </div>
+
+    <div class="heart">
+      ♡
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function blowCandle() {
+
+      const flame = document.getElementById("flame");
+      const smoke = document.getElementById("smoke");
+      const message = document.getElementById("message");
+
+      flame.classList.add("off");
+      smoke.classList.add("show");
+      message.classList.add("show");
+
+    }
+
+  </script>
+
+</body>
+</html>
